@@ -20,7 +20,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentProjectionComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

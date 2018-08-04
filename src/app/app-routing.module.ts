@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './demo/home/home.component';
+import { DialogHomeComponent } from './demo/dialog/dialog-home/dialog-home.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  { path: '', component: HomeComponent },
+  { path: 'dialog', component: DialogHomeComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
