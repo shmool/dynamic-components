@@ -12,9 +12,11 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.1.0",
+    "@angular/cdk": "^6.2.0",
     "@angular/common": "^6.1.0",
     "@angular/compiler": "^6.1.0",
     "@angular/core": "^6.1.0",
+    "@angular/elements": "^6.1.1",
     "@angular/forms": "^6.1.0",
     "@angular/http": "^6.1.0",
     "@angular/material": "^6.4.2",
@@ -24,7 +26,7 @@
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26",
-    "@angular/cdk": "^6.2.0"
+    "document-register-element": "^1.7.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.7.0",

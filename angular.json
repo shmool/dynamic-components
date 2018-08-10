@@ -18,6 +18,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "lazyModules": [
+              "src/app/plugin/plugin.module",
+              "src/app/plugin2/plugin.module"
+            ],
             "outputPath": "dist/ng-talks-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,7 +37,11 @@
               },
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {

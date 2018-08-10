@@ -1,0 +1,18 @@
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+
+textarea {
+  height: 300px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  border-radius: 4px;
+}

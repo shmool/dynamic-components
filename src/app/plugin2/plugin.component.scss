@@ -1,0 +1,14 @@
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.text-field {
+  display: block;
+}
+
+.quote-card {
+  background: #b3bbeb;
+  z-index: 1;
+}
