@@ -16,7 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     DemoModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'widgets',
+      useValue: [],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

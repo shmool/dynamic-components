@@ -1,5 +1,5 @@
 import {
-  Component, ComponentFactoryResolver,
+  Component, ComponentFactoryResolver, Inject,
   Injector,
   NgModuleFactoryLoader,
   OnInit,
@@ -22,17 +22,8 @@ import { NoteComponent } from '../../dymanic/shared/note/note.component';
           <div>
             <button mat-button (click)="addQuoteCmp()">Add Quote</button>
             <button mat-button (click)="addGraph()">Add Graph</button>
-            <button mat-button (click)="addNote()">Add Note</button>
           </div>
 
-          <div>
-            <!--<mat-form-field>-->
-
-            <textarea [value]="currentComponent?.instance.data.text"
-                      (keyup)="update($event.target.value)"
-                      [style.background]="bgcolor"></textarea>
-            <!--</mat-form-field>-->
-          </div>
         </mat-card>
 
       </mat-sidenav>
@@ -72,18 +63,23 @@ export class DynamicComponent implements OnInit {
   constructor(
     @SkipSelf() private injector: Injector,
     private loader: NgModuleFactoryLoader,
-    private cr: ComponentFactoryResolver) {
+    private cr: ComponentFactoryResolver, @Inject('widgets') public widgets) {
   }
 
   ngOnInit() {
+
+    // this.color.forEach(c => {
+    //   this.vc.create(this.cr.resolveComponentFactory(c))
+    // });
   }
 
   addNote() {
 
     const cmpFactory = this.cr.resolveComponentFactory(NoteComponent);
-    const componentRef = cmpFactory.create(this.injector);
+    // const componentRef = cmpFactory.create(this.injector);
     // componentRef.instance.textChange.subscribe(console.log)
-    this.vc.insert(componentRef.hostView);
+    // this.vc.insert(componentRef.hostView);
+    this.vc.create(cmpFactory);
   }
   addGraph() {
     this.loader.load('src/app/plugin2/plugin.module#PluginModule')
@@ -117,6 +113,7 @@ export class DynamicComponent implements OnInit {
     // const cmpFactory = r.resolveComponentFactory(TextInputComponent);
 
     const widgets = module.injector.get('widgets');
+    console.log(widgets)
     const cmpFactory = r.resolveComponentFactory(widgets[0][0].component);
 
     // create a component and attach it to the view
